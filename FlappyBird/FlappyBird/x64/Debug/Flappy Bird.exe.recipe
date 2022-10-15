@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Programming\C++_Projects\FlappyBird\FlappyBird\x64\Debug\Flappy Bird.exe</FullPath>
+      <FullPath>C:\Programming\C++_Projects\FlappyBirdClone\FlappyBird\FlappyBird\x64\Debug\Flappy Bird.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

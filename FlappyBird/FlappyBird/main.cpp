@@ -1,54 +1,56 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Object.h"
+#include "KeyListener.h"
+#include "Bird.h"
+#include "ParallaxBackground.h"
 
 const static double FPS = 60;
-bool isRunning = true;
-Object* obj;
-Object* obj2;
+Bird* bird;
+ParallaxBackground* background;
 
-void pollEvents() {
-    SDL_Event event;
+const static int WIDTH = 1000;
+const static int HEIGHT = 1000;
 
-    while (SDL_PollEvent(&event)) {
+bool isColliding() {
 
-        switch (event.type) {
-
-            case SDL_QUIT: 
-                isRunning = false;
-                break;
-
-            default:
-                break;
-        }
+    if (bird->getY() < 0 || bird->getY() > HEIGHT) {
+        return true;
     }
+
+    return false;
 }
 
-void update(const float dt) {
-   //Update shit?
+void update(const float dt, KeyListener& listener) {
+   
+    listener.listen();
+    bird->update(dt,listener);
+    background->update(dt, listener);
 
-    obj2->setRect(100, 100, 100, 100);
-    pollEvents();
-}
-
+    
+    if (isColliding()) {
+        //TODO This is kind of stupid.
+        listener.setIsRunning(false);
+    }
+    
+    //TODO Check collision
+}   
 
 void render(SDL_Renderer* renderer) {
 
     SDL_RenderClear(renderer);
 
-    obj->draw(renderer);
-    obj2->draw(renderer);
-
+    background->draw(renderer);
+    bird->draw(renderer);
+    
     SDL_RenderPresent(renderer);
 }
 
 void init(SDL_Renderer* renderer) {
    
     //Check memory leaks using Object.
-    obj = new Object(0, 0, 50,50,"test.jpg", renderer);
-    obj2 = obj->clone();
-    obj2->setRect(100, 100, 100, 100);
+    bird = new Bird(75, 50, renderer);
+    background = new  ParallaxBackground(WIDTH, HEIGHT, renderer);
 
 
 }
@@ -60,34 +62,35 @@ int main(int argc, char* argv[]) {
         printf("error initializing SDL: %s\n", SDL_GetError());
     }
 
-    SDL_Window* window = SDL_CreateWindow("GAME",
+    SDL_Window* window = SDL_CreateWindow("Flappy Bird",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
-        1000, 1000, 0);
+        WIDTH, HEIGHT, 0);
 
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 
 
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     
     init(renderer);
+
+    KeyListener listener = KeyListener();
 
     Uint64 newTime = SDL_GetPerformanceCounter();
     Uint64 lastTime = 0;
     double delta = 0;
-    
-    while (isRunning) {
 
+    while (listener.isRunning()) {
+  
         lastTime = newTime;
         newTime = SDL_GetPerformanceCounter();
         delta += ((newTime - lastTime) * 1000.0) / SDL_GetPerformanceFrequency();
         
             while(delta >= 1000.0 / FPS) {
 
-                update(delta);
+                update(delta,listener);
                 render(renderer);
-
-                delta -= 1000.0 / FPS;
+                delta = 0;
                 
             }
 
@@ -96,9 +99,10 @@ int main(int argc, char* argv[]) {
     //Free the memory.
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    SDL_Quit();
 
-    delete obj;
-    delete obj2;
+    delete bird;
+    delete background;
 
 	return 0;
 }

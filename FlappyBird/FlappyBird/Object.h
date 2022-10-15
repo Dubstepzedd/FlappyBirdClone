@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include <iostream>
+#include "KeyListener.h"
 
 class Object {
 	//TODO Fix documentation.
@@ -18,7 +19,7 @@ class Object {
 
 		void virtual draw(SDL_Renderer* renderer) const;
 
-		void virtual update(const float dt);
+		void virtual update(const float dt, KeyListener& listener);
 
 		void virtual initialize();
 
@@ -36,14 +37,15 @@ class Object {
 			rect.h = h;
 		}
 
-		SDL_Rect getRect() const {
+		SDL_FRect getRect() const {
 			return rect;
 		}
 
 
 	protected:
 		SDL_Texture* texture;
-		SDL_Rect rect;
+		SDL_FRect rect;
+		SDL_Surface* surface;
 };
 
 #endif

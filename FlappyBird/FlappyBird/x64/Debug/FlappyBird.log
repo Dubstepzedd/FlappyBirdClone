@@ -1,18 +1,4 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FlappyBird.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Object.cpp
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(28,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(29,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(35,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(36,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.cpp(15,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.cpp(16,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.cpp(17,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.cpp(18,14): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
   main.cpp
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(28,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(29,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(35,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\Object.h(36,13): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Programming\C++_Projects\FlappyBird\FlappyBird\main.cpp(87,24): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-  Generating Code...
-  FlappyBird.vcxproj -> C:\Programming\C++_Projects\FlappyBird\FlappyBird\x64\Debug\Flappy Bird.exe
+C:\Programming\C++_Projects\FlappyBirdClone\FlappyBird\FlappyBird\main.cpp(91,24): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+  FlappyBird.vcxproj -> C:\Programming\C++_Projects\FlappyBirdClone\FlappyBird\FlappyBird\x64\Debug\Flappy Bird.exe
