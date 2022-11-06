@@ -4,6 +4,7 @@
 #include <SDL.h>
 #include <iostream>
 #include "KeyListener.h"
+#include "SFXHandler.h"
 
 class Object {
 	//TODO Fix documentation.
@@ -19,7 +20,7 @@ class Object {
 
 		void virtual draw(SDL_Renderer* renderer) const;
 
-		void virtual update(const float dt, KeyListener& listener);
+		void virtual update(const float dt, KeyListener& listener, SFXHandler& handler);
 
 		void virtual initialize();
 

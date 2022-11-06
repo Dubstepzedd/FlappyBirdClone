@@ -3,12 +3,12 @@
 
 #include "Object.h"
 
-class ParallaxBackground : public Object {
+class ParallaxBackground final : public Object {
 
 	public:
 		ParallaxBackground(const float width, const float height, SDL_Renderer* renderer);
 
-		void virtual update(const float dt, KeyListener& listener) override;
+		void virtual update(const float dt, KeyListener& listener, SFXHandler& handler) override;
 
 		void virtual draw(SDL_Renderer* renderer) const override;
 

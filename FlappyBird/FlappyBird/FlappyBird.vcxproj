@@ -72,8 +72,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\SDL2-2.24.1\include;C:\SDL2_image-2.6.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL2_image-2.6.2\lib\x64;C:\SDL2-2.24.1\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -113,7 +113,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,16 +134,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bird.cpp" />
+    <ClCompile Include="DynamicText.cpp" />
     <ClCompile Include="KeyListener.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ParallaxBackground.cpp" />
+    <ClCompile Include="Pipe.cpp" />
+    <ClCompile Include="SFXHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bird.h" />
+    <ClInclude Include="DynamicText.h" />
     <ClInclude Include="KeyListener.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ParallaxBackground.h" />
+    <ClInclude Include="Pipe.h" />
+    <ClInclude Include="SFXHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

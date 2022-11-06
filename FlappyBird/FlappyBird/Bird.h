@@ -18,20 +18,20 @@ class Bird final : public Object {
 
 		void virtual draw(SDL_Renderer* renderer) const override;
 
-		void virtual update(const float dt, KeyListener& listener) override;
+		void virtual update(const float dt, KeyListener& listener, SFXHandler& sfxHandler) override;
 
-		void copy(const Bird& other);
-
-		float getX() {
+		float getX() const {
 			return rect.x;
 		}
 
-		float getY() {
+		float getY() const {
 			return rect.y;
 		}
 
 
 	private:
+		void copy(const Bird& other);
+
 		float cooldown;
 		float timer = cooldown;
 		float acceleration;

@@ -49,7 +49,7 @@ void Object::draw(SDL_Renderer* renderer) const {
     SDL_RenderCopyF(renderer, texture, NULL, &rect);
 }
 
-void Object::update(const float dt, KeyListener& listener) {
+void Object::update(const float dt, KeyListener& listener, SFXHandler& handler) {
 
 }
 

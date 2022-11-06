@@ -1,9 +1,8 @@
 #include "Bird.h"
-#include <SDL.h>
 
-Bird::Bird(const float x, const float y, SDL_Renderer* renderer) : Object(x, y, 50, 50, "bird.png", renderer) {
+Bird::Bird(const float x, const float y, SDL_Renderer* renderer) : Object(x, y, 50, 50, "images/bird.png", renderer) {
     rotation = 0;
-    cooldown = 500;
+    cooldown = 400;
     timer = cooldown;
     acceleration = 1.0f;
     gravity = 100.0f;
@@ -13,7 +12,7 @@ Bird::Bird(const float x, const float y, SDL_Renderer* renderer) : Object(x, y, 
     center.y = 25;
 }
 
-//DRY Appears Below. Fix?
+
 Bird::Bird(const Bird& other) : Object(other) {
     copy(other);
 }
@@ -42,7 +41,7 @@ void Bird::draw(SDL_Renderer* renderer) const  {
    
 }
 
-void Bird::update(const float dt, KeyListener& listener) {
+void Bird::update(const float dt, KeyListener& listener, SFXHandler& handler) {
     timer += dt;
 
     //The rotation will not get above 180 degrees so there is no need for us to check it.
@@ -55,6 +54,7 @@ void Bird::update(const float dt, KeyListener& listener) {
         timer = 0.0f;
         acceleration = -3.0f;
         rotation = 0.0f;
+        handler.playSfx("wing");
     }
 
     if (acceleration <= 3.0f) {
@@ -62,6 +62,7 @@ void Bird::update(const float dt, KeyListener& listener) {
     }
     
 }
+
 
 Bird* Bird::clone() const {
     return new Bird(*this);

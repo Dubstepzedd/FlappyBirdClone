@@ -1,6 +1,6 @@
 #include "ParallaxBackground.h"
 
-ParallaxBackground::ParallaxBackground(const float width, const float height, SDL_Renderer* renderer) : Object(0, 0, width, height, "background.png", renderer) {
+ParallaxBackground::ParallaxBackground(const float width, const float height, SDL_Renderer* renderer) : Object(0, 0, width, height, "images/background.png", renderer) {
 	speed = 10;
 	secondRect.x = width;
 	secondRect.y = 0;
@@ -8,18 +8,19 @@ ParallaxBackground::ParallaxBackground(const float width, const float height, SD
 	secondRect.h = height;
 }
 
-void ParallaxBackground::update(const float dt, KeyListener& listener) {
+void ParallaxBackground::update(const float dt, KeyListener& listener, SFXHandler& handler) {
 	
-	if(rect.x + rect.w < 0) {
-		rect.x = rect.w;
-	}
-
-	if (secondRect.x + secondRect.w < 0) {
-		secondRect.x = secondRect.w;
-	}
-
 	rect.x -= speed * 1 / dt;
 	secondRect.x -= speed * 1 / dt;
+
+	if(rect.x + rect.w < 0) {
+		rect.x = secondRect.x + secondRect.w;
+	}
+
+	else if (secondRect.x + secondRect.w < 0) {
+		secondRect.x = rect.x + rect.w;
+	}
+
 }
 
 
