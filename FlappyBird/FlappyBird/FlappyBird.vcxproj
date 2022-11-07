@@ -135,21 +135,28 @@
   <ItemGroup>
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="DynamicText.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="KeyListener.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ParallaxBackground.cpp" />
     <ClCompile Include="Pipe.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SFXHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bird.h" />
     <ClInclude Include="DynamicText.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="KeyListener.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ParallaxBackground.h" />
     <ClInclude Include="Pipe.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SFXHandler.h" />
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
