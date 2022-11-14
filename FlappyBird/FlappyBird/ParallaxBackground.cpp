@@ -1,14 +1,11 @@
 #include "ParallaxBackground.h"
 
-ParallaxBackground::ParallaxBackground(const float width, const float height, SDL_Renderer* renderer) : Object(0, 0, width, height, "images/background.png", renderer) {
+ParallaxBackground::ParallaxBackground() {
+	secondRect = SDL_FRect();
 	speed = 10;
-	secondRect.x = width;
-	secondRect.y = 0;
-	secondRect.w = width;
-	secondRect.h = height;
 }
 
-void ParallaxBackground::update(const float dt, KeyListener& listener, SFXHandler& handler) {
+void ParallaxBackground::update(const float dt, InputListener& listener, SFXHandler& handler) {
 	
 	rect.x -= speed * 1 / dt;
 	secondRect.x -= speed * 1 / dt;
@@ -23,8 +20,17 @@ void ParallaxBackground::update(const float dt, KeyListener& listener, SFXHandle
 
 }
 
+void ParallaxBackground::initialize(const float width, const float height) {
+	Object::initialize(width,0,width,height);
+
+	secondRect.x = 0;
+	secondRect.y = 0;
+	secondRect.w = width;
+	secondRect.h = height;
+}
+
 
 void ParallaxBackground::draw(SDL_Renderer* renderer) const {
-	SDL_RenderCopyF(renderer, texture, NULL, &rect);
-	SDL_RenderCopyF(renderer, texture, NULL, &secondRect);
+	SDL_RenderCopyF(renderer, Utilities::backgroundTexture, NULL, &rect);
+	SDL_RenderCopyF(renderer, Utilities::backgroundTexture, NULL, &secondRect);
 }

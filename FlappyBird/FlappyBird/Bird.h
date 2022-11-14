@@ -2,23 +2,26 @@
 #define BIRD_H
 
 #include "Object.h"
+#include <string>
 #include <SDL.h>
 
 class Bird final : public Object {
 	//TODO Fix documentation.
 
 	public:
-		Bird(const float x, const float y, SDL_Renderer* renderer);
+		Bird();
 
 		Bird(const Bird& other);
 
 		Bird& operator=(const Bird& other);
 
-		virtual Bird* clone() const override;
+		virtual Bird* clone() const;
 
 		void virtual draw(SDL_Renderer* renderer) const override;
 
-		void virtual update(const float dt, KeyListener& listener, SFXHandler& sfxHandler) override;
+		void virtual update(const float dt, InputListener& listener, SFXHandler& sfxHandler) override;
+
+		void virtual initialize(const float x, const float y, const float width, const float height);
 
 		float getX() const {
 			return rect.x;
@@ -27,7 +30,6 @@ class Bird final : public Object {
 		float getY() const {
 			return rect.y;
 		}
-
 
 	private:
 		void copy(const Bird& other);

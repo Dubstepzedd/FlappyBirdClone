@@ -34,6 +34,15 @@
     <Filter Include="Header Files\utils">
       <UniqueIdentifier>{e6bc84b1-fa97-4d1a-907b-21bd9e2bf4ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\graphics\ui">
+      <UniqueIdentifier>{290f8da8-4ebe-4a78-95c2-c09894459962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\graphics\ui">
+      <UniqueIdentifier>{eb9b4d3a-0a0e-462f-9a2f-8dfc9d2cd3b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{b3a39274-819e-4cc4-9bd4-71379d847732}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,7 +60,7 @@
     <ClCompile Include="Pipe.cpp">
       <Filter>Source Files\objects</Filter>
     </ClCompile>
-    <ClCompile Include="KeyListener.cpp">
+    <ClCompile Include="InputListener.cpp">
       <Filter>Source Files\handlers</Filter>
     </ClCompile>
     <ClCompile Include="SFXHandler.cpp">
@@ -69,6 +78,18 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>Source Files\graphics</Filter>
     </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\graphics\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities.cpp">
+      <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreScene.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bird.h">
@@ -83,7 +104,7 @@
     <ClInclude Include="ParallaxBackground.h">
       <Filter>Header Files\objects</Filter>
     </ClInclude>
-    <ClInclude Include="KeyListener.h">
+    <ClInclude Include="InputListener.h">
       <Filter>Header Files\handlers</Filter>
     </ClInclude>
     <ClInclude Include="SFXHandler.h">
@@ -103,6 +124,18 @@
     </ClInclude>
     <ClInclude Include="Utilities.h">
       <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\graphics\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionListener.h">
+      <Filter>Header Files\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreScene.h">
+      <Filter>Header Files\graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,6 +8,10 @@ Scene::~Scene() {
 
 }
 
+void Scene::init() {
+
+}
+
 std::string Scene::getTag() const {
 	return sceneTag;
 }

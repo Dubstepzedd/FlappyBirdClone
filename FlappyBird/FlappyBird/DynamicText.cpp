@@ -32,6 +32,6 @@ void DynamicText::drawText(SDL_Renderer* renderer, const float x, const float y,
 	SDL_DestroyTexture(texture);
 }
 
-void DynamicText::getDimenions(const std::string text, int w, int h) {
+void DynamicText::getDimenions(const std::string text, int& w, int& h) {
 	TTF_SizeUTF8(font, text.c_str(), &w, &h);
 }

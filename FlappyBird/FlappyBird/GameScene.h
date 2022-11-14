@@ -8,18 +8,21 @@
 #include <vector>
 #include "DynamicText.h"
 #include "Utilities.h"
+#include "SceneManager.h"
+#include "ScoreScene.h"
 
 class GameScene final : public Scene {
 
 	public:
 		GameScene();
-		~GameScene();
 
-		virtual void init(SDL_Renderer* renderer) override;
-		virtual void update(const float dt, KeyListener& listener, SFXHandler& handler, SDL_Renderer* renderer) override;
+		virtual void init() override;
+		virtual void update(const float dt, InputListener& listener, SFXHandler& handler) override;
 		virtual void draw(SDL_Renderer* renderer) override;
-	private:
+		void killPlayer();
 
+	private:
+		void reset();
 		bool isColliding();
 
 		//Variables
@@ -27,10 +30,10 @@ class GameScene final : public Scene {
 		static constexpr int GAP = 450;
 		static constexpr float COOLDOWN = 3000;
 
-		float timer = 0;
-		int score = 0;
-		Bird* bird = nullptr;
-		ParallaxBackground* background = nullptr;
+		float timer;
+		int score;
+		Bird bird;
+		ParallaxBackground background;
 		DynamicText font;
 		std::vector<std::pair<Pipe*, Pipe*>> pipes;
 };

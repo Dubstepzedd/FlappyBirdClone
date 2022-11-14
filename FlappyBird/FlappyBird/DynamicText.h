@@ -16,7 +16,7 @@ class DynamicText {
 		
 		void drawText(SDL_Renderer* renderer, const float x, const float y, const std::string text, const SDL_Color color);
 
-		void getDimenions(const std::string text, int w, int h);
+		void getDimenions(const std::string text, int& w, int& h);
 
 	private:
 		TTF_Font* font = nullptr;

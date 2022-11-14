@@ -136,25 +136,33 @@
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="DynamicText.cpp" />
     <ClCompile Include="GameScene.cpp" />
-    <ClCompile Include="KeyListener.cpp" />
+    <ClCompile Include="InputListener.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ParallaxBackground.cpp" />
     <ClCompile Include="Pipe.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ScoreScene.cpp" />
     <ClCompile Include="SFXHandler.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionListener.h" />
     <ClInclude Include="Bird.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="DynamicText.h" />
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="KeyListener.h" />
+    <ClInclude Include="InputListener.h" />
+    <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ParallaxBackground.h" />
     <ClInclude Include="Pipe.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ScoreScene.h" />
     <ClInclude Include="SFXHandler.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>

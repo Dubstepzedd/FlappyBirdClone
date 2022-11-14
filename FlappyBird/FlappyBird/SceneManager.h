@@ -8,7 +8,9 @@
 class SceneManager {
 
 	public:
-		static SceneManager& getInstance();
+		~SceneManager();
+
+		static SceneManager* getInstance();
 
 		void addScene(Scene* scene);
 		void setScene(const std::string tag);
@@ -17,8 +19,8 @@ class SceneManager {
 	private:
 		SceneManager();
 		std::map<std::string, Scene*> scenes;
-		std::string tag;
-		static SceneManager instance;
+		std::string sceneTag;
+		static SceneManager* instance;
 };
 
 #endif
