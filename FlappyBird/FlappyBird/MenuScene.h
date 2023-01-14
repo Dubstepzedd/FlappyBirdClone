@@ -15,6 +15,7 @@ class MenuScene final : public Scene, public ActionListener {
 
 public:
 	MenuScene();
+	~MenuScene();
 
 	virtual void init() override;
 	virtual void update(const float dt, InputListener& listener, SFXHandler& handler) override;
@@ -27,6 +28,8 @@ private:
 	ParallaxBackground background;
 	Bird bird;
 	Button playBtn;
+	Button exitBtn;
+	bool isRunning = true;
 	
 };
 
